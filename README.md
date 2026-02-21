@@ -1,4 +1,4 @@
-# Wappalyzer Alternative - Bloomberry
+# Wappalyzer Alternative API
 
 Detect B2B tech stacks via API — including backend tools like Okta, Salesforce, Workday, and ChatGPT that Wappalyzer and BuiltWith can't see.
 
@@ -13,7 +13,7 @@ Detect B2B tech stacks via API — including backend tools like Okta, Salesforce
 | Churn detection | ❌ | ❌ | ✅ |
 | Products tracked | ~1,500 | ~50,000+ | 1,200+ B2B products |
 
-Wappalyzer detects frontend scripts on websites. Bloomberry detects **backend and enterprise software** that leaves no website footprint — HR systems, security tools, CRMs, DevOps, and AI platforms.
+Wappalyzer and BuiltWith detect frontend scripts on websites. Bloomberry detects **backend and enterprise software** that leaves no website footprint — HR systems, security tools, CRMs, DevOps, and AI platforms.
 
 ## How It Works
 
@@ -25,8 +25,7 @@ Signals appear within **3 days** of adoption. Churn signals within **1-2 weeks**
 
 ### Get companies using a specific product
 ```bash
-curl "https://api.revealera.com/accounts/tech.json?vendor=okta" \
-  -H "x-api-key: YOUR_API_KEY"
+curl "https://api.revealera.com/accounts/tech.json?vendor_name=Okta&api_key=YOUR_API_KEY"
 ```
 
 **Response:**
@@ -49,8 +48,7 @@ curl "https://api.revealera.com/accounts/tech.json?vendor=okta" \
 
 ### Get recent tech stack changes (adoptions & churns)
 ```bash
-curl "https://api.revealera.com/signals/tech.json?vendor=salesforce&signal_type=churn" \
-  -H "x-api-key: YOUR_API_KEY"
+curl "https://api.revealera.com/signals/tech.json?vendor_name=Salesforce&signal_type=churn&api_key=YOUR_API_KEY"
 ```
 
 **Response:**
@@ -72,8 +70,7 @@ curl "https://api.revealera.com/signals/tech.json?vendor=salesforce&signal_type=
 
 ### Get all vendors in a category
 ```bash
-curl "https://api.revealera.com/vendors/all_vendors.json?category=CRM" \
-  -H "x-api-key: YOUR_API_KEY"
+curl "https://api.revealera.com/vendors/all_vendors.json?category=CRM&api_key=YOUR_API_KEY"
 ```
 
 ## Use Cases
@@ -95,9 +92,9 @@ curl "https://api.revealera.com/vendors/all_vendors.json?category=CRM" \
 
 ## Code Examples
 
-- [Python](/examples/python.py)
-- [Node.js](/examples/node.js)
-- [cURL](/examples/curl.sh)
+- [Python](python-example.py)
+- [Node.js](node-example.js)
+- [cURL](curl-example.sh)
 
 ## Get Your Free API Key
 
@@ -107,3 +104,7 @@ curl "https://api.revealera.com/vendors/all_vendors.json?category=CRM" \
 
 → **[docs.bloomberry.com](https://docs.bloomberry.com)**
 
+
+---
+
+Built by [Revealera](https://revealera.com) — providing tech adoption data to hedge funds since 2020.
