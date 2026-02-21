@@ -1,4 +1,4 @@
-# Wappalyzer Alternative API
+# Wappalyzer Alternative - Bloomberry
 
 Detect B2B tech stacks via API — including backend tools like Okta, Salesforce, Workday, and ChatGPT that Wappalyzer and BuiltWith can't see.
 
@@ -13,7 +13,7 @@ Detect B2B tech stacks via API — including backend tools like Okta, Salesforce
 | Churn detection | ❌ | ❌ | ✅ |
 | Products tracked | ~1,500 | ~50,000+ | 1,200+ B2B products |
 
-Wappalyzer and BuiltWith detect frontend scripts on websites. Bloomberry detects **backend and enterprise software** that leaves no website footprint — HR systems, security tools, CRMs, DevOps, and AI platforms.
+Wappalyzer detects frontend scripts on websites. Bloomberry detects **backend and enterprise software** that leaves no website footprint — HR systems, security tools, CRMs, DevOps, and AI platforms.
 
 ## How It Works
 
@@ -107,10 +107,3 @@ curl "https://api.revealera.com/vendors/all_vendors.json?category=CRM" \
 
 → **[docs.bloomberry.com](https://docs.bloomberry.com)**
 
-## Sample Data
-
-Want to see real output before signing up? Check [`/sample-data`](/sample-data) for example API responses.
-
----
-
-Built by [Revealera](https://revealera.com) — providing tech adoption data to hedge funds since 2020.
