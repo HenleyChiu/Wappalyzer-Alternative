@@ -1,4 +1,4 @@
-# Wappalyzer Alternative API
+# Wappalyzer Alternative - Bloomberry
 
 Detect B2B tech stacks via API — including backend tools like Okta, Salesforce, Workday, and ChatGPT that Wappalyzer and BuiltWith can't see.
 
