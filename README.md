@@ -7,7 +7,7 @@ Detect B2B tech stacks via API — including backend tools like Okta, Salesforce
 |  | Wappalyzer | BuiltWith | Bloomberry |
 |---|---|---|---|
 | Frontend tech (React, GTM, analytics) | ✅ | ✅ | ✅ |
-| Backend tech (Okta, Workday, Salesforce) | ❌ | ❌ | ✅ |
+| Backend tech (Okta, Workday, Salesforce, Hubspot) | ❌ | ❌ | ✅ |
 | Enterprise AI (ChatGPT, Claude, Perplexity) | ❌ | ❌ | ✅ |
 | Real-time adoption signals | ❌ | ❌ | ✅ |
 | Churn detection | ❌ | ❌ | ✅ |
@@ -25,46 +25,83 @@ Signals appear within **3 days** of adoption. Churn signals within **1-2 weeks**
 
 ### Get companies using a specific product
 ```bash
-curl "https://api.revealera.com/accounts/tech.json?vendor_name=Okta&api_key=YOUR_API_KEY"
+curl "https://api.revealera.com/accounts/tech.json?vendor_name=Hubspot%20Marketing%20Hub&api_key=YOUR_API_KEY"
 ```
 
 **Response:**
 ```json
 {
-  "results": [
+  "users": [
     {
-      "domain": "stripe.com",
-      "company_name": "Stripe",
-      "vendor": "Okta",
-      "category": "Identity and Access Management",
-      "status": "active",
-      "first_detected": "2023-04-12",
-      "employees": "5001-10000",
-      "industry": "Financial Services"
+      "id": "1217675115",
+      "domain": "nextsecurities.com",
+      "company_name": "Next Securities",
+      "company_logo": "https://media.licdn.com/dms/image/...",
+      "industry": "Financial Services",
+      "company_size_range": "51–200",
+      "country": "KR",
+      "region": "Asia",
+      "vendor_name": "Hubspot Marketing Hub",
+      "vendor_category": "advanced marketing automation",
+      "usage_started_at": "2026-02-21"
     }
-  ]
+  ],
+  "pagination": {
+    "page": 1,
+    "per_page": 20,
+    "total_pages": 524,
+    "total_items": 10462,
+    "next_token": "eyJzb3J0IjpbMTc3MDcxMDM4NCwiMTQ5MDAwMjg1Il0sInBhZ2UiOjJ9"
+  }
 }
 ```
 
 ### Get recent tech stack changes (adoptions & churns)
 ```bash
-curl "https://api.revealera.com/signals/tech.json?vendor_name=Salesforce&signal_type=churn&api_key=YOUR_API_KEY"
+curl "https://api.revealera.com/signals/tech.json?vendor_name=Hubspot%20Marketing%20Hub&api_key=YOUR_API_KEY"
 ```
 
 **Response:**
 ```json
 {
-  "results": [
+  "signals": [
     {
-      "domain": "acme.com",
-      "company_name": "Acme Corp",
-      "vendor": "Salesforce",
-      "signal_type": "churn",
-      "detected_date": "2025-02-15",
-      "employees": "201-500",
-      "industry": "Software Development"
+      "id": "7531436",
+      "change_date": "2026-02-21T08:34:19-05:00",
+      "change_type": "unsubscribed",
+      "change_description": "unsubscribed from Hubspot Marketing Hub",
+      "domain": "g6hospitality.com",
+      "company_name": "G6 Hospitality LLC",
+      "company_logo": "https://media.licdn.com/dms/image/...",
+      "industry": "Hospitality",
+      "company_size_range": "201–500",
+      "country": "US",
+      "region": "North America",
+      "vendor_name": "Hubspot Marketing Hub",
+      "vendor_category": "advanced marketing automation"
+    },
+    {
+      "id": "7530701",
+      "change_date": "2026-02-21T06:51:47-05:00",
+      "change_type": "subscribed",
+      "change_description": "subscribed to Hubspot Marketing Hub",
+      "domain": "lumalabs.ai",
+      "company_name": "Luma AI",
+      "industry": "Software Development",
+      "company_size_range": "51–200",
+      "country": "US",
+      "region": "North America",
+      "vendor_name": "Hubspot Marketing Hub",
+      "vendor_category": "advanced marketing automation"
     }
-  ]
+  ],
+  "pagination": {
+    "page": 1,
+    "per_page": 20,
+    "total_pages": 97,
+    "total_items": 1938,
+    "next_token": "eyJzb3J0IjpbMTc3MTM1MzY3OSwiNzQ3MzczOCJdLCJwYWdlIjoyfQ=="
+  }
 }
 ```
 
@@ -103,7 +140,6 @@ curl "https://api.revealera.com/vendors/all_vendors.json?category=CRM&api_key=YO
 ## Full Documentation
 
 → **[docs.bloomberry.com](https://docs.bloomberry.com)**
-
 
 ---
 
